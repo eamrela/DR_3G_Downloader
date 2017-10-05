@@ -35,21 +35,19 @@ public class Processor {
     public static void main(String[] args) {
         
         
-        if(args.length!=1){
-            System.out.println("Please set the input paramters");
-            System.out.println("Configuration File");
-            System.exit(1);
-        }
-        String conf = args[0];
-        initApp(conf);
+//        if(args.length!=1){
+//            System.out.println("Please set the input paramters");
+//            System.out.println("Configuration File");
+//            System.exit(1);
+//        }
+//        String conf = args[0];
+//        initApp(conf);
         System.out.println("Downloading Files");
         JSch jsch = new JSch();
         Session session = null;
         try {
-//            session = jsch.getSession(AppConf.getOSS_USER(), AppConf.getOSS_IP(), 22);
             session = jsch.getSession(AppConf.getOSS_USER(), AppConf.getOSS_IP(), 22);
             session.setConfig("StrictHostKeyChecking", "no");
-//            session.setPassword(AppConf.getOSS_PASS());
             session.setPassword(AppConf.getOSS_PASS());
             session.connect();
 
